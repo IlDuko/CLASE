@@ -3,7 +3,7 @@ function calcularEnvio(subtotal) {
     throw new RangeError("Escribe un monto entero válido, mayor o igual a cero.");
   }
 
-  return subtotal > 100000 ? 0 : 8000;
+  return subtotal >= 100000 ? 0 : 8000;
 }
 
 if (typeof module !== "undefined" && module.exports) {
