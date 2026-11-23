@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de envíos</title>
+  <style>
+    body { margin: 0; padding: 2rem 1.25rem; background: #f6f5ee; color: #182d29; font: 1rem/1.6 system-ui, sans-serif; }
+    main { max-width: 36rem; margin: 6vh auto; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; }
+    p { margin: 1rem 0; }
+    form { margin-top: 1.75rem; }
+    label { display: block; margin-bottom: .35rem; font-weight: 650; }
+    input, button { box-sizing: border-box; padding: .7rem .85rem; border-radius: .35rem; font: inherit; }
+    input { width: min(100%, 18rem); border: 1px solid #60756e; }
+    button { margin-top: .5rem; border: 1px solid #176a5c; background: #176a5c; color: #fff; cursor: pointer; font-weight: 650; }
+    :focus-visible { outline: 3px solid #93640a; outline-offset: 3px; }
+    output { display: block; min-height: 1.7rem; margin-top: 1rem; font-weight: 650; }
+    output[data-error] { color: #a02c25; }
+  </style>
+  <script defer src="./envios.js"></script>
+  <script defer src="./interfaz.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Calculadora de envíos</h1>
+    <p>El envío cuesta 8.000 COP. A partir de 100.000 COP de compra, el envío es gratis.</p>
+    <form id="pedido">
+      <label for="subtotal">Subtotal del pedido en COP</label>
+      <input id="subtotal" type="text" inputmode="numeric" autocomplete="off" placeholder="Ejemplo 100000">
+      <button type="submit">Calcular</button>
+      <output id="resultado" for="subtotal" aria-live="polite"></output>
+    </form>
+  </main>
+</body>
+</html>
